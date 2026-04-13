@@ -1,0 +1,93 @@
+// Configurações globais do app
+export const config = {
+  theme: {
+    primaryColor: '#B8932A',
+    secondaryColor: '#F0C040',
+    backgroundColor: '#080808',
+    textColor: '#f5f5f0',
+    accentColor: '#D4A93C',
+  },
+  texts: {
+    appName: 'AutoLux Premium Cars',
+    heroTitle: 'Dirija com Classe. Reserve com Facilidade.',
+    heroSub: 'Os melhores veículos do mercado para sua viagem de negócios, passeio ou ocasião especial em Brasília e Goiânia.',
+    features: [
+      { icon: '🛡️', title: 'Seguro Incluso', desc: 'Cobertura básica em todos os veículos' },
+      { icon: '💰', title: 'Melhor Preço', desc: 'Garantia de menor tarifa' },
+      { icon: '📍', title: 'Entrega Local', desc: 'Levamos até você em Brasília e Goiânia' },
+    ],
+  },
+  features: {
+    enableReviews: true,
+    enablePromotions: true,
+    enableNotifications: false,
+    enableDarkMode: true,
+  },
+  language: 'pt-br',
+  currency: 'BRL',
+  cars: [
+    {
+      id: '1',
+      name: 'VW Polo',
+      price: 89,
+      category: 'Econômicos',
+      specs: ['4 portas', '5 pass.', 'Automático', 'Ar-cond.'],
+    },
+    {
+      id: '2',
+      name: 'Chev. Onix',
+      price: 95,
+      category: 'Econômicos',
+      specs: ['4 portas', '5 pass.', 'Manual', 'Ar-cond.'],
+    },
+    {
+      id: '3',
+      name: 'Fiat Argo',
+      price: 92,
+      category: 'Econômicos',
+      specs: ['4 portas', '5 pass.', 'Automático', 'Ar-cond.'],
+    },
+    {
+      id: '4',
+      name: 'Toyota Corolla Cross',
+      price: 189,
+      category: 'SUVs',
+      specs: ['4 portas', '5 pass.', 'CVT', 'Ar-cond.'],
+    },
+    {
+      id: '5',
+      name: 'Jeep Compass',
+      price: 210,
+      category: 'SUVs',
+      specs: ['4 portas', '5 pass.', 'Automático', '4x4'],
+    },
+    {
+      id: '6',
+      name: 'Honda Civic',
+      price: 235,
+      category: 'Premium',
+      specs: ['4 portas', '5 pass.', 'Turbo CVT', 'Turbo'],
+    },
+    {
+      id: '7',
+      name: 'Chev. Cruze',
+      price: 215,
+      category: 'Premium',
+      specs: ['4 portas', '5 pass.', 'Turbo', 'Couro'],
+    },
+    {
+      id: '8',
+      name: 'BMW Série 3',
+      price: 490,
+      category: 'Luxo',
+      specs: ['4 portas', '5 pass.', 'Steptronic', 'Couro'],
+    },
+    {
+      id: '9',
+      name: 'Mercedes C200',
+      price: 560,
+      category: 'Luxo',
+      specs: ['4 portas', '5 pass.', '9G-Tronic', 'AMG Line'],
+    },
+  ],
+};

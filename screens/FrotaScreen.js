@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, FlatList, Image, StyleSheet } from 'react-native';
+import BottomNav from '../components/BottomNav';
 
 const categories = ['Econômicos', 'SUVs', 'Premium', 'Luxo'];
 
@@ -48,39 +49,42 @@ export default function FrotaScreen({ navigation }) {
   );
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.pageHeader}>
-        <Text style={styles.pageTitle}>Nossa Frota</Text>
-        <Text style={styles.pageSub}>Escolha o veículo perfeito para sua ocasião</Text>
-      </View>
+    <View style={styles.container}>
+      <ScrollView style={{ backgroundColor: '#080808' }}>
+        <View style={styles.pageHeader}>
+          <Text style={styles.pageTitle}>Nossa Frota</Text>
+          <Text style={styles.pageSub}>Escolha o veículo perfeito para sua ocasião</Text>
+        </View>
 
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.catTabs}>
-        {categories.map(cat => (
-          <TouchableOpacity
-            key={cat}
-            style={[styles.catTab, activeCat === cat && styles.catTabActive]}
-            onPress={() => setActiveCat(cat)}
-          >
-            <Text style={[styles.catTabText, activeCat === cat && styles.catTabTextActive]}>{cat}</Text>
-          </TouchableOpacity>
-        ))}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.catTabs}>
+          {categories.map(cat => (
+            <TouchableOpacity
+              key={cat}
+              style={[styles.catTab, activeCat === cat && styles.catTabActive]}
+              onPress={() => setActiveCat(cat)}
+            >
+              <Text style={[styles.catTabText, activeCat === cat && styles.catTabTextActive]}>{cat}</Text>
+            </TouchableOpacity>
+          ))}
+        </ScrollView>
+
+        <FlatList
+          data={carsData[activeCat]}
+          renderItem={renderCar}
+          keyExtractor={item => item.id}
+          numColumns={2}
+          contentContainerStyle={styles.carGrid}
+          scrollEnabled={false}
+        />
       </ScrollView>
-
-      <FlatList
-        data={carsData[activeCat]}
-        renderItem={renderCar}
-        keyExtractor={item => item.id}
-        numColumns={2}
-        contentContainerStyle={styles.carGrid}
-        scrollEnabled={false}
-      />
-    </ScrollView>
+      <BottomNav navigation={navigation} active="Frota" />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#080808' },
-  pageHeader: { padding: 20, borderBottomWidth: 1, borderBottomColor: 'rgba(184,147,42,0.2)' },
+  container: { flex: 1 },
+  pageHeader: { padding: 20, borderBottomWidth: 1, borderBottomColor: 'rgba(184,147,42,0.2)', backgroundColor: '#080808' },
   pageTitle: { fontSize: 28, fontWeight: '700', color: '#F0C040', marginBottom: 4 },
   pageSub: { color: '#555', fontSize: 13, letterSpacing: 0.02 },
   catTabs: { paddingHorizontal: 15, marginVertical: 15 },

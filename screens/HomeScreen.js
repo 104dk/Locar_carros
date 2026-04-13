@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Dimensions } from 'react-native';
+import BottomNav from '../components/BottomNav';
 
 const { width } = Dimensions.get('window');
 
@@ -97,6 +98,7 @@ export default function HomeScreen({ navigation }) {
           <Text style={styles.reviewText}>Aluguei um BMW para um evento corporativo. Experiência premium do início ao fim. Voltarei sempre!</Text>
         </View>
       </View>
+      <BottomNav navigation={navigation} active="Home" />
     </ScrollView>
   );
 }

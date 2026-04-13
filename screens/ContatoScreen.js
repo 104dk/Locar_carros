@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet, Linking } from 'react-native';
+import BottomNav from '../components/BottomNav';
 
-export default function ContatoScreen() {
+export default function ContatoScreen({ navigation }) {
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (index) => {
@@ -80,6 +81,7 @@ export default function ContatoScreen() {
         </TouchableOpacity>
       </View>
     </ScrollView>
+    <BottomNav navigation={navigation} active="Contato" />
   );
 }
 

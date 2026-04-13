@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, TextInput, ScrollView, StyleSheet, Alert } from 'react-native';
+import BottomNav from '../components/BottomNav';
 
 export default function ReservaScreen({ route, navigation }) {
   const { car } = route.params || {};
@@ -214,6 +215,7 @@ export default function ReservaScreen({ route, navigation }) {
         </View>
       )}
     </ScrollView>
+    <BottomNav navigation={navigation} active="Reserva" />
   );
 }
 
